@@ -1,0 +1,223 @@
+spawnMonster(9400507); 召唤怪物
+
+2018.8.8
+cm.getPlayer().setweekLog(给角色每周记录);
+cm.getPlayer().getweekLog(取角色每周记录);
+//周六晚上11.59分刷新
+
+2018.7.17-------------------------------------------------
+cm.killbossloga(String bossid)//删bosslog的
+cm.killbosslog(数据库表名字，条件名字，条件，条件2的id)//这个id可以定义为账号id，角色id
+cm.killbosslog(数据库表名字，条件名字，条件)//删除默认自己角色id
+
+cm.getPlayer().setOneTimeLoga(给账号永久记录);
+cm.getPlayer().setOneTimeLog(给角色永久记录);
+
+例子：（setOneTimeLoga和 setOneTimeLog 一样的用法）
+cm.getPlayer().getOneTimeLoga(给账号永久记录);//获取这个记录 会返回 0，或者 -1 都是失效 1以上才有有记录
+cm.getPlayer().getOneTimeLog(给角色永久记录);//获取这个记录 会返回 0，或者 -1 都是失效 1以上才有有记录
+
+2017.11.15--------------------------------------------------------------------
+
+NPC函数：cm.getPlayer().addmaxHP(10086);给玩家上限HP为10086
+NPC函数：cm.getPlayer().addmaxMP(10086);同上
+
+以前的------------------------------------------------------------------------
+
+var ca = java.util.Calendar.getInstance();
+var year = ca.get(java.util.Calendar.YEAR); //获得年份
+var month = ca.get(java.util.Calendar.MONTH) + 1; //获得月份
+var day = ca.get(java.util.Calendar.DATE);//获取日
+var hour = ca.get(java.util.Calendar.HOUR_OF_DAY); //获得小时
+var minute = ca.get(java.util.Calendar.MINUTE);//获得分钟
+var second = ca.get(java.util.Calendar.SECOND); //获得秒
+var weekday = ca.get(java.util.Calendar.DAY_OF_WEEK);
+
+if (cm.haveItem(4032226, 1)) {//判断物品  请把#v1132184#从身上脱到背包
+cm.gainItem(4032226, -1);//扣除物品
+if (!cm.isLeader()) { //判断队长            cm.sendOk("请让你的队长和我说话~");
+            cm.dispose();
+cm.gainExp(40000);//给4万经验的意思
+if(cm.getLevel() >= 20){//判断等级
+if (cm.getPlayer().hasEquipped(1003036)) {//判断身上是否佩戴
+if(!cm.canHold(1112804)) {//判断身上有没有这个物品
+if(cm.getPlayer().getCSPoints(1) >= 9500){//判断点券
+if(cm.getPlayer().getCSPoints(1) >= 9500){//判断抵用券
+ if (cm.getPlayer().getBeans() >=500) {//判断豆豆
+cm.getPlayer().gainBeans(+600);//给豆豆
+if(cm.getPlayer().getzxsj() >= 300){//判断时间
+if(cm.getPlayer().getBossLog("zxsj") == 4){//判断bosslog记录
+cm.getPlayer().setBossLog('zxsj');//给bosslog记录
+if(cm.getPlayer().getOneTimeLog("yuemiao1") >= 1){//判断永久记录
+cm.getPlayer().setOneTimeLog("yuemiao1");//给永久记录
+if (cm.getPlayerCount(103000800) <= 0 ){//判断地图有没有人
+cm.getMap(103000804).resetFully();//刷新地图
+cm.spawnMobOnMap(9300002,1,297,-2188,103000804);//地图生怪
+if (cm.getMeso() >= 1000){//判断多少金币
+
+cm.gainMeso(- 1000 );//扣除多少金币
+cm.openNpc(9050001, 1);//打开NPC
+if (cm.getPlayer().getPoints() >= 1) {//判断账号一个号只能一个
+cm.getPlayer().setPoints(1);// 给账号一个号一个记录
+cm.gainItem(1072369, 1);//奖励物品+数量 或者cm.gainItem(1072369, 1, 1);奖励物品+数量+天数
+cm.getPlayer().modifyCSPoints(1, +666, true);//给点券第一种函数
+ cm.gainDJ(500);//给点券第二种函数
+cm.getPlayer().modifyCSPoints(2, +666, true);//给抵用券
+cm.gainMeso(1000);//给金币
+cm.sendOk("兑换活动奖励成功");//对话框
+cm.worldMessage(6,"玩家：["+cm.getName()+"]领取了活动奖励！么么哒！");//公告
+cm.dispose();//结束
+cm.removeAll(4001101);//清理背包有这个物品
+cm.givePartyExp(1800);//给队友经验
+cm.endPartyQuest(1200);//团队完成任务
+cm.warp(910010100);//地图传送
+cm.warpParty(910010100);//
+cm.getPlayer().gainAp(5);//给能力值
+cm.getPlayer().gainSP(5);//给技能点
+cm.teachSkill(20000024, 1, 1);//技能，等级，最大等级
+cm.teachSkill(20000024, 1, 1, -1);//技能，等级，最大等级，时间
+cm.getPlayer().gainSP((cm.getPlayer().getLevel()-8)*3);//转职给技能点  当前等级-8x3技能点
+cm.getPlayer().getRemainingSp()//判断当前技能点
+cm.gainClosenessAll(10);//给宠物亲密度
+cm.spawnMob(9300037, 400, 150);//坐标生成怪物
+sl = cm.getPlayer().getItemQuantity(4001129, false);//显示物品
+角色剩余:#v4001129# x " + sl + " 枚!
+cm.gainPet(5000006," 雪犬", 1, 0, 100, 0, 1);//1代表等级 100代表饱和度 最后的1代表技能空
+
+if (cm.getInventory(1).isFull(0)){//判断第一个也就是装备栏的装备栏是否有一个空格
+
+cm.sendOk("#b请保证装备栏位至少有1个空格,否则无法抽奖.");
+兑换
+cm.dispose();
+
+} else if (cm.getInventory(2).isFull(0)){//判断第二个也就是消耗栏的装备栏是否有一个空格
+
+cm.sendOk("#b请保证消耗栏位至少有1个空格,否则无法抽奖.");
+
+cm.dispose();
+
+} else if (cm.getInventory(3).isFull(0)){//判断第三个也就是设置栏的装备栏是否有一个空格
+
+cm.sendOk("#b请保证设置栏位至少有1个空格,否则无法抽奖.");
+
+cm.dispose();
+
+} else if (cm.getInventory(4).isFull(0)){//判断第四个也就是其它栏的装备栏是否有一个空格
+
+cm.sendOk("#b请保证其它栏位至少有1个空格,否则无法抽奖.");
+
+cm.dispose();
+
+} else if (cm.getInventory(5).isFull(0)){//判断第五个也就是现金栏的装备栏是否有一个空格
+
+cm.sendOk("#b请保证现金栏位至少有1个空格,否则无法抽奖.");
+
+cm.dispose();
+
+} else if(cm.getInventory(1).getItem(1).getExpiration() != -1) {
+cm.sendOk("A:装备限时装备不能进行强化.");
+cm.dispose();
+} else if (cm.getInventory(1).getItem(1).getUniqueId() < 0) {
+cm.sendOk("只能强化现金装备。");
+
+if(cm.getInventory(1).getItem(1).getUpgradeSlots()==0){//判断已升级次数
+cm.sendOk("#e你的#v1132184#可升级次数为0次,无法在继续强化!");
+cm.dispose();
+
+if(cm.getInventory(1).getItem(1).getLevel()>=100){//判断升级次数是否100次
+
+            var party = cm.getParty().getMembers();
+            for (var i = 0; i < party.size(); i++) {
+                if (party.get(i).getMap() == 扎昆地图)
+                   cm.传送（party.get(i).getMap()）;
+            }
+
+
+importPackage(java.lang);
+importPackage(Packages.tools);
+importPackage(Packages.client);
+importPackage(Packages.server);
+importPackage(Packages.tools.packet);
+
+var ii = MapleItemInformationProvider.getInstance();
+var type = ii.getInventoryType(ItemId[selection][0]); //获得装备的类形
+var toDrop = ii.randomizeStats(ii.getEquipById(ItemId[selection][0]).copy(); // 生成一个Equip类
+//var temptime = (System.currentTimeMillis() + 1 * 24 * 60 * 60 * 1000); //时间
+//toDrop.setExpiration(temptime);
+//toDrop. setFlag(1);//上锁
+//toDrop. setStr(50);//给力量
+//toDrop. setDex(50);//给敏捷
+//toDrop. setInt(50);//给智力
+//toDrop. setLuk(50);//给运气
+//toDrop. setHp(300);//给HP
+//toDrop. setMp(300);//给MP
+//toDrop. setWatk(99);//攻击
+toDrop. setMatk(999);//魔法力
+/*toDrop. setWdef(99);//物理防御
+toDrop. setMdef(99);//魔法防御
+toDrop. setAcc(99);//命中
+toDrop. setAvoid(99);//回避
+toDrop. setHands(99);//手技
+toDrop. setSpeed(99);//移动
+toDrop. setJump(99);//跳跃*/
+cm.getPlayer().getInventory(type).addItem(toDrop);//将这个装备放入包中
+cm.getC().getSession().write(CWvsContext.InventoryPacket.addInventorySlot(type, toDrop, false)); //刷新背包
+cm.sendOk("领取成功！");
+
+			函数 flytoID  飞到某玩家（id） 所在的地图
+
+npc用法：cm.flytoID(玩家id)
+---------------------------------------------------
+函数 IDtogetPlayername  通过id取玩家名字
+
+npc用法：cm.IDtogetPlayername(玩家id)
+-----------------------------------------------
+函数 cm.getzxwj().size（）  取在线人数
+
+npc用法：cm.getzxwj().size（）
+------------------------------------------------------
+函数 getPartyBosslog（bossl，次数） 查看团队bosslog,条件（多少次））全体通过返回ture
+
+npc用法：if（cm.etPartyBosslog（‘黑龙’，5）== ture）//看看队友和自己是不是打过4次黑龙，没打过返回ture 超过5就flase
+
+-----------------------------------------------------
+函数 setPartyBosslog  团队bosslog 给所有队友添加bosslog 类似单人的bosslog用法
+
+npc用法：cm.setPartyBosslog（‘黑龙’）
+----------------------------------------------------------
+函数 openWeb  玩家客户端打开一个网页
+
+npc用法：cm.openWeb（“http://www.baidu.com”）
+---------------------------------------------------------
+函数 cm.getPlayer().getRemainingSp()  获取剩余技能点
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getRemainingSp() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getRemainingAp()  获取剩余能力值
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getRemainingAp() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getRemainingSpSize()  获取当前组队人数
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getRemainingSpSize() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getJob()  获取当前职业代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getJob() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getHair()  获取当前脸型代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getHair() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getFace()  获取当前发型代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getFace() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getLevel()  获取当前等级代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getLevel() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getName()  获取名字代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getName() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getMapId()  获取地图代码
+npc用法：text += "#e#d当天在线时长：" + cm.getPlayer().getMapId() + " 技能点"
+---------------------------------------------------------
+函数 cm.getPlayer().getMegaTimes()  获取刷了多少次喇叭
+text += "喇叭次数:#b"+cm.getPlayer().getMegaTimes()+"次"
+
+cm.ShowWZEffect("Effect/BasicEff.img/SkillBook/Success/0"); //卷轴成功效果
+cm.ShowWZEffect("Effect/BasicEff.img/SkillBook/Failure/0"); //卷轴失败效果
