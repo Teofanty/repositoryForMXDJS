@@ -42,7 +42,7 @@ if(cm.getLevel() >= 20){//判断等级
 if (cm.getPlayer().hasEquipped(1003036)) {//判断身上是否佩戴
 if(!cm.canHold(1112804)) {//判断身上有没有这个物品
 if(cm.getPlayer().getCSPoints(1) >= 9500){//判断点券
-if(cm.getPlayer().getCSPoints(1) >= 9500){//判断抵用券
+if(cm.getPlayer().getCSPoints(2) >= 9500){//判断抵用券
  if (cm.getPlayer().getBeans() >=500) {//判断豆豆
 cm.getPlayer().gainBeans(+600);//给豆豆
 if(cm.getPlayer().getzxsj() >= 300){//判断时间
