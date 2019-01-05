@@ -2502,7 +2502,10 @@ function action(mode, type, selection) {
         } else if (cm.getInventory(5).isFull(0)) {//判断第五个也就是现金栏的装备栏是否有一个空格
             cm.sendOk("#b请保证现金栏位至少有1个空格,否则无法抽奖.");
             cm.dispose();
-        } else if (cm.getPlayer().getCSPoints(2) < 300) {//判断抵用
+        }if (cm.getPlayer().getLevel() < 30) {
+            cm.sendOk("你的等级必须达到30级以上.");
+            cm.dispose();
+        }else if (cm.getPlayer().getCSPoints(2) < 300) {//判断抵用
             cm.sendOk("你确定你有300抵用吗？");
             cm.dispose();
         } else {
