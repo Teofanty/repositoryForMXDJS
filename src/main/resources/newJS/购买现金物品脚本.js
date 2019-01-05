@@ -27,18 +27,28 @@ function action(mode, type, selection) {
                 text += "";
             }
             text += "\t\t\t#e欢迎来到#b中心 #k!#n\r\n\r\n";
-            text += "#L1#使用200点券购买双倍经验卡2小时(双倍卡一天只能购买一次)#l\r\n\r\n";
-            text += "#L2#使用200抵用券购买双倍经验卡2小时(双倍卡一天只能购买一次)#l\r\n\r\n";
+            text += "#L1#使用200点券购买双倍经验卡3小时(双倍卡一天只能购买一次)#l\r\n\r\n";
+            text += "#L2#使用200抵用券购买双倍经验卡3小时(双倍卡一天只能购买一次)#l\r\n\r\n";
 
             cm.sendSimple(text);
         }
         if (status == 1) {
             if (selection == 1) {
-                if(cm.getPlayer().getCSPoints(1) < 200){
+                if (cm.getPlayer().getCSPoints(1) < 200) {
                     cm.sendOk("您的点券不够，请核对后重试");
                     cm.dispose();
                 }
-                cm.gainItem()
+                cm.gainDJ(-200);
+                cm.gainItem(5211047);
+                cm.dispose();
+            } else if (selection == 2) {
+                if (cm.getPlayer().getCSPoints(2) < 200) {
+                    cm.sendOk("您的抵用券不够，请核对后重试");
+                    cm.dispose();
+                }
+                cm.gainD(-200);
+                cm.gainItem(5211047);
+                cm.dispose();
             }
         } else {
             cm.dispose();
