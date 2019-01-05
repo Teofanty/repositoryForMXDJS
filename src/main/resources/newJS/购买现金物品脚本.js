@@ -21,15 +21,10 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            var tex2 = "";
             var text = "";
-            for (i = 0; i < 10; i++) {
-                text += "";
-            }
             text += "\t\t\t#e欢迎来到#b现金道具中心 #k!#n\r\n\r\n";
             text += "#L1#使用200点券购买双倍经验卡3小时(双倍卡一天只能购买一次)#l\r\n\r\n";
             text += "#L2#使用200抵用券购买双倍经验卡3小时(双倍卡一天只能购买一次)#l\r\n\r\n";
-
             cm.sendSimple(text);
         }
         if (status == 1) {
