@@ -39,9 +39,9 @@ function action(mode, type, selection) {
             text += "#L1##e#d每日签到#l     #L2##e#d在线奖励#l     #L3##e#r赞助充值#l\r\n\r\n"
             text += "#L5##e#d删除道具#l     #L6##e#d排行榜#l       #L4##e#d推广系统#l\r\n\r\n"
             text += "#L7##e#d勋章领取#l     #L8##e#r练级推荐#l     #L9##e#d同步商城#l\r\n\r\n"
-            //text += "#L10##e#d海岛技能#l\r\n\r\n #L14##e#d主城传送#l"
-            text += "#L15##e#d骑士团/战神转职#l  #L16##e#r现金道具#l\r\n\r\n"
-            text += " #e#r   更新 : #e#d欢迎大家~                      "
+            //text += "#L10##e#d海岛技能#l\r\n\r\n #L14##e#d主城传送#l #L16##e#r现金道具#l "
+            text += "#L15##e#d骑士团/战神转职#l  #L16##e#r现金道具#l \r\n\r\n"
+            text += " #e#r   更新 : #e#d自由兑换相框增加卷轴兑换入口~                      "
             if (cm.getPlayer().isGM()) {
                 text += "-----------#k以下功能只有GM才看得见-----------\r\n"
                 text += "#L18##e#r分身系统#l       #L19##e#r传送身边#l     #L20##e#r满技能#l\r\n\r\n"

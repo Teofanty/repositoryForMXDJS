@@ -1,11 +1,3 @@
-importPackage(net.sf.odinms.client);
-importPackage(java.lang);
-importPackage(Packages.tools);
-importPackage(Packages.client);
-importPackage(Packages.server);
-importPackage(Packages.tools.packet);
-importPackage(Packages.client.inventory);
-
 
 var level_1 = [4031561];
 var amount_1 = [1];

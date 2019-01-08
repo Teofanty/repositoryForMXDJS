@@ -223,8 +223,16 @@ function action(mode, type, selection) {
                         }
                     }
                     if (total != 2) {
-                        cm.sendOk("地图顶部需要有两个个锁定杆朝下,请按压下吧.");
-                        cm.dispose();
+                        if (cm.canHold(4001049,1)) {
+                            clear();
+                            cm.gainItem(4001049,1);
+                            cm.givePartyExp(20000);
+                            em.setProperty("stage6", "2");
+                            cm.dispose();
+                        } else {
+                            cm.sendOk("请腾出空间!");
+                            cm.dispose();
+                        }
                     } else {
                         var num_correct = 0;
                         for (var i = 0; i < 3; i++) {

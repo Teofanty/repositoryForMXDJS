@@ -29,19 +29,20 @@ function action(mode, type, selection) {
                 text += "";
             }
             text += "\t\t\t\t我是兑换NPC,欢迎#k!#n\r\n"
-            text += "              #d#e点卷余额：#r" + cm.getPlayer().getCSPoints(1) + "#d#e点#k\r\n\r\n"//3
-            text += "#L1##d1000W金币兑换1332-4666点券#l\r\n\r\n"
-            text += "#L2##d#v4310018##v4310019##v4310014#兑换戒指#l\t"
-            text += "#L6##d兑换#v4310018##v4310019##v4310014##l\r\n\r\n"
-            text += "#L3##d使用#v4310018#升级#v1114213##l\t"
-            text += "#L4##d使用#v4310019#升级#v1113164##l\r\n\r\n"
-            text += "#L5##d使用#v4310014#升级#v1112793##l\t"
-            text += "#L10##e#d主线眼饰制作#l\r\n\r\n"
-            text += "#L7##d使用#v4031456#兑换装备#l\r\n"
+            // text += "              #d#e点卷余额：#r" + cm.getPlayer().getCSPoints(1) + "#d#e点#k\r\n\r\n"//3
+            //text += "#L1##d1000W金币兑换1332-4666点券#l\r\n\r\n"
+            //text += "#L2##d#v4310018##v4310019##v4310014#兑换戒指#l\t"
+            //text += "#L6##d兑换#v4310018##v4310019##v4310014##l\r\n\r\n"
+            //text += "#L3##d使用#v4310018#升级#v1114213##l\t"
+            //text += "#L4##d使用#v4310019#升级#v1113164##l\r\n\r\n"
+            //text += "#L5##d使用#v4310014#升级#v1112793##l\t"
+            //text += "#L10##e#d主线眼饰制作#l\r\n\r\n"
+            //text += "#L7##d使用#v4031456#兑换装备#l\r\n"
             text += "#L18##d使用#v4001176#兑换卷轴#l\r\n\r\n"
             text += "#L8##e#d抽奖兑换#l\r\n\r\n"
-            text += "#L9##e#d重生武器制作#l\r\n\r\n"
+            //text += "#L9##e#d重生武器制作#l\r\n\r\n"
             text += "#L11##e#d勋章兑换#l\r\n\r\n";
+            text += "#L19##e#d卷轴兑换#l\r\n\r\n";
             //text += "#L10##e#d副本装备兑换#l\r\n\r\n"
             cm.sendSimple(text);
         } else if (selection == 1) {
@@ -162,6 +163,8 @@ function action(mode, type, selection) {
             cm.openNpc(9310074, 10);//枫叶球兑换
         } else if (selection == 18) {
             cm.openNpc(9310074, 18);//枫叶球兑换
+        }else if (selection == 19) {
+            cm.openNpc(9310074, 19);//卷轴兑换
         }
     }
 }
